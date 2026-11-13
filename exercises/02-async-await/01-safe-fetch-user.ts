@@ -21,6 +21,14 @@ export interface UserApi {
   getUser(id: number): Promise<User>;
 }
 
-export async function getUserDisplayName(api: UserApi, id: number): Promise<string> {
-  throw new Error("Not implemented");
+export async function getUserDisplayName(
+  api: UserApi,
+  id: number,
+): Promise<string> {
+  try {
+    const result = await api.getUser(id);
+    return result.name.toUpperCase();
+  } catch (err) {
+    return "UNKNOWN";
+  }
 }
