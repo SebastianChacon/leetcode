@@ -19,5 +19,19 @@ export async function mapWithConcurrency<T, R>(
   limit: number,
   fn: (item: T, index: number) => Promise<R>,
 ): Promise<R[]> {
-  throw new Error("Not implemented");
+  const results = new Array(items.length);
+  let running = [];
+  if (items.length === 0) return [];
+  for (let i = 0; i < items.length; i++) {
+    const p = fn(items[i], i).then((value) => {
+      results[i] = value;
+    });
+    running.push(p);
+    if (running.length === limit) {
+      await Promise.all(running);
+      running = [];
+    }
+  }
+  await Promise.all(running);
+  return results;
 }
