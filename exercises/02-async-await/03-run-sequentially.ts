@@ -13,5 +13,13 @@
  * Concepts: for...of + await, sequential vs parallel execution.
  */
 export async function runSequentially<T>(tasks: (() => Promise<T>)[]): Promise<T[]> {
-  throw new Error("Not implemented");
+  try {
+    const completetaks = []
+    for (const task of tasks) {
+      completetaks.push(await task())
+    }
+    return completetaks
+  } catch (err) {
+    throw err
+  }
 }
