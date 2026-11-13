@@ -13,5 +13,10 @@
  * Concepts: racing promises (Promise.race or manual), clearTimeout.
  */
 export function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
-  throw new Error("Not implemented");
+  console.log(promise, ms)
+  return new Promise((res, rej) => {
+    setTimeout(async() => {
+      consesult)
+    }, ms)
+  })
 }

@@ -9,5 +9,5 @@
  * Concepts: `new Promise((resolve, reject) => ...)`, setTimeout.
  */
 export function sleep(ms: number): Promise<void> {
-  throw new Error("Not implemented");
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
