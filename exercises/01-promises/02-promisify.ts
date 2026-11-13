@@ -21,5 +21,12 @@ export type Callback<T> = (error: Error | null, result?: T) => void;
 export function promisify<Args extends unknown[], T>(
   fn: (...args: [...Args, Callback<T>]) => void,
 ): (...args: Args) => Promise<T> {
-  throw new Error("Not implemented");
+  return (...args: Args) => {
+    return new Promise((res, rej) => {
+      fn(...args, (err, result) => {
+        if (err) rej(err);
+        else if(result) res(result);
+      });
+    });
+  }
 }
