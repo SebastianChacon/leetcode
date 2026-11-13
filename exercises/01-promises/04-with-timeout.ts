@@ -13,10 +13,16 @@
  * Concepts: racing promises (Promise.race or manual), clearTimeout.
  */
 export function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
-  console.log(promise, ms)
   return new Promise((res, rej) => {
-    setTimeout(async() => {
-      consesult)
-    }, ms)
-  })
+    const timer = setTimeout(() => { rej("Timeout") }, ms)
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        res(value)
+      }, (err) => {
+        clearTimeout(timer),
+          rej(err)
+      }
+    )
+  });
 }
