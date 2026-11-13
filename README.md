@@ -26,17 +26,17 @@ npm run typecheck              # strict TypeScript check of everything
 ## Progress
 
 ### 01 · Promises
-- [ ] 01 sleep
-- [ ] 02 promisify
-- [ ] 03 promiseAll (build your own)
-- [ ] 04 withTimeout
-- [ ] 05 promiseAllSettled (build your own)
+- [x] 01 sleep
+- [x] 02 promisify
+- [x] 03 promiseAll (build your own)
+- [x] 04 withTimeout
+- [x] 05 promiseAllSettled (build your own)
 
 ### 02 · async / await
-- [ ] 01 getUserDisplayName (try/catch)
-- [ ] 02 retry
-- [ ] 03 runSequentially
-- [ ] 04 mapWithConcurrency ⭐ hard
+- [x] 01 getUserDisplayName (try/catch)
+- [x] 02 retry
+- [x] 03 runSequentially
+- [x] 04 mapWithConcurrency ⭐ hard
 - [ ] 05 pipeAsync
 
 ### 03 · Sync vs Async (Event Loop)
