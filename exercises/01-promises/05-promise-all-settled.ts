@@ -16,5 +16,19 @@ export type SettledResult<T> =
   | { status: "rejected"; reason: unknown };
 
 export function promiseAllSettled<T>(promises: Promise<T>[]): Promise<SettledResult<T>[]> {
-  throw new Error("Not implemented");
+  return new Promise((res, rej) => {
+    if(promises.length === 0) return res([])
+
+    let count = 0;
+    const results = new Array(promises.length)
+    promises.forEach(async (promise, index) => {
+      try {
+        let result = await promise;
+        results[index] = { status: "fulfilled", value: result }
+      } catch (err) {
+        results[index] = { status: "rejected", reason: err}
+      }
+      if(++count === promises.length) res(results)
+    })
+  })
 }
