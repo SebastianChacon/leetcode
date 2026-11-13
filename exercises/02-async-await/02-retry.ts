@@ -12,6 +12,23 @@
  *
  * Concepts: loops with await, error handling, real-world resilience.
  */
-export async function retry<T>(fn: () => Promise<T>, attempts: number, delayMs = 0): Promise<T> {
-  throw new Error("Not implemented");
+export async function retry<T>(
+  fn: () => Promise<T>,
+  attempts: number,
+  delayMs = 0,
+): Promise<T> {
+  let lastError: unknown;
+
+  for (let i = 0; i < attempts; i++){
+    try {
+      // console.log(fn())
+      return await fn();
+    } catch (err) {
+      lastError = err;
+      if (i !== attempts - 1 && delayMs > 0) {
+        await new Promise((res) => setTimeout(res, delayMs));
+      }
+    }
+  }
+  throw lastError
 }
