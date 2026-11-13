@@ -16,5 +16,24 @@
  * Interview favorite!
  */
 export function promiseAll<T>(values: (T | Promise<T>)[]): Promise<T[]> {
-  throw new Error("Not implemented");
+  // console.log(values)
+  return new Promise((res, rej) => {
+    let count = 0;
+    const results: Array<T> = new Array < T > (values.length);
+    if(values.length === 0) return res([])
+    values.forEach( async (value, i) => {
+      try {
+        results[i] = await value;
+        if (++count === values.length) res(results);
+      } catch (err) {
+        rej(err)
+      }
+    })
+  });
 }
+
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+await promiseAll([Promise.resolve(1), 2, sleep(10).then(() => 3)]); // [1, 2, 3]
