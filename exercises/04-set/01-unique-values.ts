@@ -13,5 +13,6 @@
  * Concepts: new Set(iterable), spread, Set preserves insertion order.
  */
 export function uniqueValues<T>(arr: T[]): T[] {
-  throw new Error("Not implemented");
+  const uniqueVal = new Set<any>(arr)
+  return [...uniqueVal]
 }
