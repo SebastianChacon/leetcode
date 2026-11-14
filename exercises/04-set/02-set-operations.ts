@@ -12,13 +12,26 @@
  * Concepts: Set.has (O(1)), iterating a Set, filter on spread.
  */
 export function union<T>(a: Set<T>, b: Set<T>): Set<T> {
-  throw new Error("Not implemented");
+  const unionSet = new Set([...a, ...b])
+  return unionSet
 }
 
 export function intersection<T>(a: Set<T>, b: Set<T>): Set<T> {
-  throw new Error("Not implemented");
+  const intersectionSet = new Set<T>();
+  a.forEach((v) => {
+    if (b.has(v)) {
+      intersectionSet.add(v)
+    }
+  })
+  return intersectionSet
 }
 
 export function difference<T>(a: Set<T>, b: Set<T>): Set<T> {
-  throw new Error("Not implemented");
+  const differenceSet = new Set<T>();
+  a.forEach((v) => {
+    if (!(b.has(v))) {
+      differenceSet.add(v)
+    }
+  })
+  return differenceSet
 }
