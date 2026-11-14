@@ -13,5 +13,19 @@
  * s[left] and move `left` forward.
  */
 export function lengthOfLongestSubstring(s: string): number {
-  throw new Error("Not implemented");
+  const strLarge = new Set<string>([]);
+  let count = 0;
+  let left = 0;
+
+  for (let i = 0; i < s.length; i++) {
+
+    while (strLarge.has(s[i])) {
+      strLarge.delete(s[left])
+      left++
+    }
+    strLarge.add(s[i])
+    if(strLarge.size > count) count = strLarge.size
+
+  }
+  return count
 }
