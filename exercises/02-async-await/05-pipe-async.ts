@@ -18,5 +18,15 @@
 export type AnyFn = (input: any) => unknown;
 
 export function pipeAsync(...fns: AnyFn[]): (input: unknown) => Promise<unknown> {
-  throw new Error("Not implemented");
+  return async (input) => {
+
+    let value = input
+    for (const fn of fns) {
+      value = await fn(value)
+      console.log(value)
+
+    }
+    return value
+  }
+
 }
