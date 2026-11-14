@@ -37,7 +37,7 @@ npm run typecheck              # strict TypeScript check of everything
 - [x] 02 retry
 - [x] 03 runSequentially
 - [x] 04 mapWithConcurrency ⭐ hard
-- [ ] 05 pipeAsync
+- [x] 05 pipeAsync
 
 ### 03 · Sync vs Async (Event Loop)
 - [ ] 01 predict output: basic
@@ -47,11 +47,11 @@ npm run typecheck              # strict TypeScript check of everything
 - [ ] 05 processInChunks (don't block the loop)
 
 ### 04 · Set
-- [ ] 01 uniqueValues
-- [ ] 02 union / intersection / difference
+- [x] 01 uniqueValues
+- [x] 02 union / intersection / difference
 - [ ] 03 containsDuplicate (LC #217)
 - [ ] 04 longestConsecutive (LC #128)
-- [ ] 05 lengthOfLongestSubstring (LC #3)
+- [x] 05 lengthOfLongestSubstring (LC #3)
 
 ### 05 · Map
 - [ ] 01 wordFrequency
@@ -59,6 +59,7 @@ npm run typecheck              # strict TypeScript check of everything
 - [ ] 03 groupAnagrams (LC #49)
 - [ ] 04 groupBy
 - [ ] 05 LRUCache (LC #146)
+- [x] 06 romanToInt (LC #13)
 
 ### 06 · Type System
 - [ ] 01 discriminated unions & assertNever
@@ -87,6 +88,9 @@ npm run typecheck              # strict TypeScript check of everything
 - [ ] 03 flatten
 - [ ] 04 deepClone (+ circular refs bonus)
 - [ ] 05 permutations & subsets (backtracking)
+
+### 10 · Linked Lists
+- [x] 01 addTwoNumbers (LC #2)
 
 ## Other languages
 
