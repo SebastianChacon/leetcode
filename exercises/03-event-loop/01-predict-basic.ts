@@ -15,5 +15,5 @@
  *   3. Then ONE macrotask (setTimeout, setInterval, I/O), then microtasks again...
  */
 export function predictOrder(): string[] {
-  throw new Error("Not implemented");
+  return ["1", "4", "3", "2"];
 }
