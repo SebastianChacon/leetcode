@@ -20,5 +20,7 @@
  * Everything after the `await` is scheduled as a microtask.
  */
 export function predictOrder(): string[] {
-  throw new Error("Not implemented");
+  return [
+    "start", "a1","b", "end", "a2"
+  ]
 }
