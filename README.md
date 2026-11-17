@@ -40,10 +40,10 @@ npm run typecheck              # strict TypeScript check of everything
 - [x] 05 pipeAsync
 
 ### 03 · Sync vs Async (Event Loop)
-- [ ] 01 predict output: basic
-- [ ] 02 predict output: async/await
-- [ ] 03 predict output: nested ⭐ hard
-- [ ] 04 batchCalls (microtasks)
+- [x] 01 predict output: basic
+- [x] 02 predict output: async/await
+- [x] 03 predict output: nested ⭐ hard
+- [x] 04 batchCalls (microtasks)
 - [ ] 05 processInChunks (don't block the loop)
 
 ### 04 · Set
