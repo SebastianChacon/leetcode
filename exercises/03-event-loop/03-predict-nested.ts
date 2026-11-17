@@ -19,5 +19,5 @@
  * is fully drained before the next macrotask runs.
  */
 export function predictOrder(): string[] {
-  throw new Error("Not implemented");
+  return [ "sync", "micro1","micro2", "timeout1","timeout2", "micro-in-timeout", "timeout-from-micro"]
 }
