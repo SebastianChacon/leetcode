@@ -92,6 +92,9 @@ npm run typecheck              # strict TypeScript check of everything
 ### 10 · Linked Lists
 - [x] 01 addTwoNumbers (LC #2)
 
+### 11 · Strings
+- [ ] 01 longestCommonPrefix (LC #14)
+
 ## Other languages
 
 - `python/`: earlier LeetCode solutions in Python.

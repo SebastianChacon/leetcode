@@ -16,5 +16,16 @@
  * Concepts: blocking vs non-blocking, macrotasks, cooperative scheduling.
  */
 export function processInChunks<T, R>(items: T[], chunkSize: number, fn: (item: T) => R): Promise<R[]> {
-  throw new Error("Not implemented");
+  return new Promise((res, rej) => {
+    const results: any[] = []
+    setTimeout(async() => {
+      for (let i = 0; i < items.length; i++){
+        results.push(fn(items[i]))
+        if (i >= chunkSize) {
+          await results;
+        }
+      }
+      res(results)
+    },0)
+  }).then()
 }
