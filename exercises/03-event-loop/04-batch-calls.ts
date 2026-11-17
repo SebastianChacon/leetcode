@@ -19,5 +19,21 @@
  * Concepts: queueMicrotask / Promise.resolve().then, flags, closures.
  */
 export function batchCalls<T>(fn: (items: T[]) => void): (item: T) => void {
-  throw new Error("Not implemented");
+  let items: any[] = [];
+  let scheduale = false;
+  return (item) => {
+    items.push(item);
+
+    if (!scheduale) {
+      scheduale = true;
+
+      queueMicrotask(() => {
+        const batch = items;
+        items = [];
+        scheduale = false;
+        fn(batch);
+      });
+
+    }
+  }
 }
