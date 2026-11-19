@@ -1,3 +1,4 @@
+
 /**
  * 04 - longestConsecutive  (LeetCode #128)           Difficulty: Medium
  *
@@ -12,5 +13,17 @@
  * if `n - 1` is NOT in the set (so `n` is the start of a sequence).
  */
 export function longestConsecutive(nums: number[]): number {
-  throw new Error("Not implemented");
+  const seqNum = new Set(nums)
+  let longest = 0;
+
+  for (const n of nums) {
+    if (!seqNum.has(n - 1)) {
+      let lenght = 1;
+      while (seqNum.has(n + lenght)) {
+        lenght++
+      }
+      longest = Math.max(lenght, longest)
+    }
+  }
+  return longest
 }
