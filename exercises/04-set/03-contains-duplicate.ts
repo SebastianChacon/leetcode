@@ -11,5 +11,12 @@
  * Try two versions: one with an early return in a loop, one comparing sizes.
  */
 export function containsDuplicate(nums: number[]): boolean {
-  throw new Error("Not implemented");
+  const uniqueNum = new Set();
+  for (const num of nums) {
+    if (uniqueNum.has(num)) {
+      return true
+    }
+    uniqueNum.add(num)
+  }
+  return false
 }
