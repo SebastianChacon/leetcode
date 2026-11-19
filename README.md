@@ -49,8 +49,8 @@ npm run typecheck              # strict TypeScript check of everything
 ### 04 · Set
 - [x] 01 uniqueValues
 - [x] 02 union / intersection / difference
-- [ ] 03 containsDuplicate (LC #217)
-- [ ] 04 longestConsecutive (LC #128)
+- [x] 03 containsDuplicate (LC #217)
+- [x] 04 longestConsecutive (LC #128)
 - [x] 05 lengthOfLongestSubstring (LC #3)
 
 ### 05 · Map
@@ -93,7 +93,8 @@ npm run typecheck              # strict TypeScript check of everything
 - [x] 01 addTwoNumbers (LC #2)
 
 ### 11 · Strings
-- [ ] 01 longestCommonPrefix (LC #14)
+- [x] 01 longestCommonPrefix (LC #14)
+- [x] 02 isValid — valid parentheses (LC #20)
 
 ## Other languages
 
